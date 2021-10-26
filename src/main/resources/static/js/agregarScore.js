@@ -7,7 +7,8 @@ function agregarScore(){
     console.log(datosPeticion);
 
     $.ajax({
-        url:"http://localhost:8081/api/Score/save",
+        //url:"http://localhost:8081/api/Score/save",
+        url:"http://129.151.122.34:8081/api/Score/save",
         data:datosPeticion,
         type:'POST',
         contentType:"application/JSON",

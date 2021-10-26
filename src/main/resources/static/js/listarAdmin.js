@@ -4,7 +4,8 @@
 
 function listarAdmin(){
     $.ajax({
-        url:"http://localhost:8081/api/Admin/all",
+        //url:"http://localhost:8081/api/Admin/all",
+        url:"http://129.151.122.34:8081/api/Admin/all",
         type:'GET',
         dataType:'json',
 

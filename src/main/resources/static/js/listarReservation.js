@@ -4,7 +4,8 @@
 
 function listarReser(){
     $.ajax({
-        url:"http://localhost:8081/api/Reservation/all",
+        //url:"http://localhost:8081/api/Reservation/all",
+        url:"http://129.151.122.34:8081/api/Reservation/all",
         type:'GET',
         dataType:'json',
 

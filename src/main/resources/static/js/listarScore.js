@@ -4,7 +4,8 @@
 
 function listarScore(){
     $.ajax({
-        url:"http://localhost:8081/api/Score/all",
+        //url:"http://localhost:8081/api/Score/all",
+        url:"http://129.151.122.34:8081/api/Score/all",
         type:'GET',
         dataType:'json',
 

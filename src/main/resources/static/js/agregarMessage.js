@@ -9,7 +9,8 @@ function agregarMessa(){
     console.log(datosPeticion);
 
     $.ajax({
-        url:"http://localhost:8081/api/Message/save",
+        //url:"http://localhost:8081/api/Message/save",
+        url:"http://129.151.122.34:8081/api/Message/save",
         data:datosPeticion,
         type:'POST',
         contentType:"application/JSON",

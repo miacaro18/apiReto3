@@ -4,7 +4,8 @@
 
 function listarCate(){
     $.ajax({
-        url:"http://localhost:8081/api/Category/all",
+        //url:"http://localhost:8081/api/Category/all",
+        url:"http://129.151.122.34:8081/api/Category/all",
         type:'GET',
         dataType:'json',
 

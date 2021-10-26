@@ -11,7 +11,8 @@ function agregarReser(){
     console.log(datosPeticion);
 
     $.ajax({
-        url:"http://localhost:8081/api/Reservation/save",
+        //url:"http://localhost:8081/api/Reservation/save",
+        url:"http://129.151.122.34:8081/api/Reservation/save",
         data:datosPeticion,
         type:'POST',
         contentType:"application/JSON",

@@ -12,7 +12,8 @@ function agregar(){
     console.log(datosPeticion);
 
     $.ajax({
-        url:"http://localhost:8081/api/Computer/save",
+        //url:"http://localhost:8081/api/Computer/save",
+        url:"http://129.151.122.34:8081/api/Computer/save",
         data:datosPeticion,
         type:'POST',
         contentType:"application/JSON",

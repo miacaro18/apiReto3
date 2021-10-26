@@ -4,7 +4,8 @@
 
 function listarMessa(){
     $.ajax({
-        url:"http://localhost:8081/api/Message/all",
+        //url:"http://localhost:8081/api/Message/all",
+        url:"http://129.151.122.34:8081/api/Message/all",
         type:'GET',
         dataType:'json',
 

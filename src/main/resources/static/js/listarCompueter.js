@@ -4,7 +4,8 @@ $(document).ready(function(){
 
 function listar(){
     $.ajax({
-        url:"http://localhost:8081/api/Computer/all",
+        //url:"http://localhost:8081/api/Computer/all",
+        url:"http://129.151.122.34:8081/api/Computer/all",
         type:'GET',
         dataType:'json',
 
