@@ -31,7 +31,9 @@ function listarRespuestaReser(num,respu){
                 <th>Start Date</th>
                 <th>Devolution Date</th>
                 <th>Computer</th>
-                <th>Client</th>
+                <th>Id Client</th>
+                <th>Name Client</th>
+                <th>Email Client</th>
                 <th>Score</th>
               </tr>`;
               
@@ -40,7 +42,9 @@ function listarRespuestaReser(num,respu){
                     <td>${respu[i].startDate}</td> 
                     <td>${respu[i].devolutionDate}</td> 
                     <td>${respu[i].computer.name}</td> 
-                    <td>${respu[i].client.name}</td> 
+                    <td>${respu[i].client.idClient}</td>
+                    <td>${respu[i].client.name}</td>
+                    <td>${respu[i].client.email}</td>
                     <td>${respu[i].score.valor}</td> 
                     </tr>
         `;

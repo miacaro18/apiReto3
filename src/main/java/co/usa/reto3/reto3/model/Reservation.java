@@ -22,6 +22,7 @@ public class Reservation implements Serializable {
     private Integer idReservation;
     private Date startDate;
     private Date devolutionDate;
+    private String status = "created";
 
     //Realizamos la relacion (muchos a uno) con computer
     @ManyToOne
@@ -63,6 +64,14 @@ public class Reservation implements Serializable {
 
     public void setDevolutionDate(Date devolutionDate) {
         this.devolutionDate = devolutionDate;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 
     public Computer getComputer() {
