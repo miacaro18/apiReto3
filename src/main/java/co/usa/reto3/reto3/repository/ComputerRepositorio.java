@@ -25,4 +25,9 @@ public class ComputerRepositorio {
     public Computer save(Computer computer){
         return computerCrudRepositorio.save(computer);
     }
+
+    public void delete(Computer computer){
+        computerCrudRepositorio.delete(computer);
+    }
+
 }

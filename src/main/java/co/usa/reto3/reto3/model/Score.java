@@ -21,6 +21,7 @@ public class Score implements Serializable{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private Integer valor;
+    private String mensaje;
     
     //Realizamos la relacion (uno a muchos) con reservation
     @OneToMany(cascade = {CascadeType.PERSIST},mappedBy = "score")
@@ -38,6 +39,12 @@ public class Score implements Serializable{
     }
     public void setValor(Integer valor) {
         this.valor = valor;
+    }
+    public String getMensaje() {
+        return mensaje;
+    }
+    public void setMensaje(String mensaje) {
+        this.mensaje = mensaje;
     }
     public List<Reservation> getReservations() {
         return reservations;

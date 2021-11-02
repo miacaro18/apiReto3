@@ -35,4 +35,29 @@ public class MessageServicio {
             }
         }
     }
+
+    public Message update(Message message){
+        if (message.getIdMessage()!=null) {
+            Optional<Message> consulta=messageRepositorio.getMessage(message.getIdMessage());
+            if (!consulta.isEmpty()){
+                if (message.getMessageText()!=null) {
+                    consulta.get().setMessageText(message.getMessageText());
+                }
+                if (message.getClient()!=null) {
+                    consulta.get().setClient(message.getClient());
+                }
+                return messageRepositorio.save(consulta.get());
+            }
+        }
+        return message;
+    }
+
+    public boolean delateMessage (int id){
+        Optional<Message> consulta=messageRepositorio.getMessage(id);
+        if (!consulta.isEmpty()){
+            messageRepositorio.delete(consulta.get());
+            return true;
+        }
+        return false;
+    }
 }

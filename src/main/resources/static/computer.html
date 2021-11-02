@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Computadores</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    
+    <script src="js\computer\listar.js"></script>
+    <script src="js\computer\registrar.js"></script>
+    <script src="js\computer\editar.js"></script>
+    <script src="js\computer\borrar.js"></script>
+    <script src="js\computer\funciones.js"></script>
+</head>
+
+<body>
+    <div>
+        <h1>Computadores</h1>
+
+        <div id="mensajes"></div>
+        <br>
+        <a href="privado.html"><img src="img/back.png" alt="Regresar"></a>
+        
+        <button id="nuevoRegistro" onclick="activaNuevo();">Registrar Computador</button>
+
+        <div id="listado"></div>
+
+        <div id="nuevo">
+            <h3>Registrar Computador</h3>
+            <input type="text" id="name" placeholder="Name">
+            <input type="text" id="brand" placeholder="Brand">
+            <input type="number" id="year" placeholder="Year">
+            <input type="text" id="description" placeholder="description">
+            <input type="number" id="category" placeholder="Category">
+            <button onclick="registrar();">Guardar</button>
+            <button onclick="estadoInicial();">Cancelar</button>
+        </div>
+
+
+        <!-- Seccion para editar registros-->
+        <div id="editar">
+            <h3>Editar Computador</h3>
+            <input type="number" id="idEdit" placeholder="id">
+            <input type="text" id="nameEdit" placeholder="Name">
+            <input type="text" id="brandEdit" placeholder="Brand">
+            <input type="number" id="yearEdit" placeholder="Year">
+            <input type="text" id="descriptionEdit" placeholder="description">
+            <input type="number" id="categoryEdit" placeholder="Category">
+            <button onclick="actualizar();">Guardar</button>
+            <button onclick="estadoInicial();">Cancelar</button>
+        </div>
+        
+    </div>
+</body>
+
+</html>

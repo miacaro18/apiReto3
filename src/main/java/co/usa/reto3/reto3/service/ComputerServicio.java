@@ -34,4 +34,35 @@ public class ComputerServicio {
             }
         }
     }
+
+    public Computer update(Computer computer){
+        if (computer.getId()!=null) {
+            Optional<Computer>consulta=computerRepositorio.getComputer(computer.getId());
+            if (!consulta.isEmpty()) {
+                if (computer.getName()!=null){
+                    consulta.get().setName(computer.getName());
+                }
+                if (computer.getBrand()!=null) {
+                    consulta.get().setBrand(computer.getBrand());                    
+                }
+                if (computer.getYear()!=null){
+                    consulta.get().setYear(computer.getYear());
+                }
+                if (computer.getDescription()!=null){
+                    consulta.get().setDescription(computer.getDescription());
+                }
+                return computerRepositorio.save(consulta.get());
+            }
+        }
+        return computer;
+    }
+
+    public boolean deleteComputer(int id){
+        Optional<Computer>consulta=computerRepositorio.getComputer(id);
+        if (!consulta.isEmpty()) {
+            computerRepositorio.delete(consulta.get());
+            return true;
+        }
+        return false;
+    }
 }

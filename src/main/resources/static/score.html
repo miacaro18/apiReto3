@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calificaciones</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    
+    <script src="js\score\listarScore.js"></script>
+    <script src="js\score\registrarScore.js"></script>
+    <script src="js\score\editarScore.js"></script>
+    <script src="js\score\borrarScore.js"></script>
+    <script src="js\score\funcionesScore.js"></script>
+</head>
+
+<body>
+    <div>
+        <h1>Calificaciones</h1>
+        <!-- en el elemento identificado con el id 'mensajes' se mostraran los mensajes
+             o resultado de ejecutar la peticion
+        -->
+        <div id="mensajes"></div>
+        <br>
+        <a href="privado.html"><img src="img/back.png" alt="Regresar"></a>
+        
+        <button id="nuevoRegistro" onclick="activaNuevo();">Registrar Calificacion</button>
+        
+        <div id="listado"></div>
+
+        <div id="nuevo">
+            <h3>Registrar Calificacion</h3>
+            <th><input type="number" id="valor" placeholder="Score (min 1 - 5 max)"></th>
+            <th><input type="test" id="mensaje" placeholder="Mensaje"></th>
+            <button onclick="registrar()">Guardar</button>
+            <button onclick="estadoInicial()">Cancelar</button>
+        </div>
+
+        <div id="editar">
+            <h3>Editar Calificacion</h3>
+            <th><input type="number" id="idEdit" placeholder="id"></th>
+            <th><input type="number" id="valorEdit" placeholder="Score (min 1 - 5 max)"></th>
+            <th><input type="text" id="mensajeEdit" placeholder="Mensaje"></th>
+            <button onclick="actualizar()">Guardar</button>
+            <button onclick="estadoInicial()">Cancelar</button>
+        </div>
+        
+    </div>
+</body>
+</html>

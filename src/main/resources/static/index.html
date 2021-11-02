@@ -5,163 +5,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alquiler de Computadores</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    
-    <script src="js\agregarComputer.js"></script>
-    <script src="js\listarCompueter.js"></script>
-
-    <script src="js\agregarCategory.js"></script>
-    <script src="js\listarCategory.js"></script>
-
-    <script src="js\agregarClient.js"></script>
-    <script src="js\listarClient.js"></script>
-
-    <script src="js\agregarMessage.js"></script>
-    <script src="js\listarMessage.js"></script>
-
-    <script src="js\agregarReservation.js"></script>
-    <script src="js\listarReservation.js"></script>
-
-    <script src="js\agregarScore.js"></script>
-    <script src="js\listarScore.js"></script>
-
-    <script src="js\agregarAdmin.js"></script>
-    <script src="js\listarAdmin.js"></script>
-
+    <base href="/"/>
+    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css"/>
+    <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
 </head>
-
 <body>
+    <h1>Computadores API</h1>
+    <div class="container unauthenticated">
+        Para iniciar con GitHub <a href="/oauth2/authorization/github">Click Aquí</a>
+    </div>
 
-    <h4>Debe ingresar los datos de forma descendente</h4>
-    <h4>Los llamdos de otras tablas se haran ingresando el ID (id es automatico)</h4>
-    <h4>Si se genera un error refresque la pagina</h4>
-
-    <table>
-        <tr>
-            <h1>Categorias</h1>
-        </tr>
-        <tr>
-            <th><input type="text" id="nameCate" placeholder="Name (text)"></th>
-            <th><input type="text" id="descriptionCate" placeholder="Description (text)"></th>
-            <th><button onclick="agregarCate()" id="btnAgregarCate">Agregar Categoria</button></th>
-            <th><button onclick="listarCate()" id="btnListarCate">Ver Datos De Categorias</button></th>
-        </tr>
-    </table>
-    <table>
-        <tr>
-            <div id="listCate"></div>
-        </tr>
-    </table>
-
-    <table>
-        <tr>
-            <h1>Computadores</h1>
-        </tr>
-        <tr>
-            <th><input type="text" id="name" placeholder="Name (text)"></th>
-            <th><input type="text" id="brand" placeholder="Brand (text)"></th>
-            <th><input type="number" id="year" placeholder="Year (number)"></th>
-            <th><input type="text" id="description" placeholder="Description (text)"></th>
-            <th><input type="number" id="category" placeholder="Cateogory (number)"></th>
-            <th><button onclick="agregar()" id="btnAgregar">Agregar Computador</button></th>
-            <th><button onclick="listar()" id="btnListar">Ver Datos De Computadores</button></th>
-        </tr>
-    </table>
-    <table>
-        <tr>
-            <div id="listComputer"></div>
-        </tr>
-    </table>
-
-    <table>
-        <tr>
-            <h1>Clientes</h1>
-        </tr>
-        <tr>
-            <th><input type="text" id="nameClie" placeholder="Name (text)"></th>
-            <th><input type="text" id="passwordClie" placeholder="Password (text)"></th>
-            <th><input type="text" id="emailClie" placeholder="Email (text)"></th>
-            <th><input type="number" id="ageClie" placeholder="Age (number)"></th>
-            <th><button onclick="agregarClie()" id="btnAgregarClie">Agregar Cliente</button></th>
-            <th><button onclick="listarClie()" id="btnListarClie">Ver Datos De Clientes</button></th>
-        </tr>
-    </table>
-    <table>
-        <tr>
-            <div id="listClie"></div>
-        </tr>
-    </table>
-
-    <table>
-        <tr>
-            <h1>Mensajes</h1>
-        </tr>
-        <tr>
-            <th><input type="text" id="messageText" placeholder="Message Text (text)"></th>
-            <th><input type="number" id="computerMessa" placeholder="Computer (Num)"></th>
-            <th><input type="number" id="clientMessa" placeholder="Client (Num)"></th>
-            <th><button onclick="agregarMessa()" id="btnAgregarMessa">Agregar Mensaje</button></th>
-            <th><button onclick="listarMessa()" id="btnListarMessa">Ver Mensajes</button></th>
-        </tr>
-    </table>
-    <table>
-        <tr>
-            <div id="listMessa"></div>
-        </tr>
-    </table>
-
-    <table>
-        <tr>
-            <h1>Calificaciones</h1>
-        </tr>
-        <tr>
-            <th><input type="number" id="valor" placeholder="Score (min 1 - 10 max)"></th>
-            <th><button onclick="agregarScore()" id="btnAgregarScore">Agregar Calificacion</button></th>
-            <th><button onclick="listarScore()" id="btnListarScore">Ver Calificaciones</button></th>
-        </tr>
-    </table>
-    <table>
-        <tr>
-            <div id="listScore"></div>
-        </tr>
-    </table>
+    <div class="container authenticated" style="display: none">
+        Autenticado como: <span id="user"></span>
+    </div>
     
-    <table>
-        <tr>
-            <h1>Reservaciones</h1>
-        </tr>
-        <tr>
-            <th><input type="date" id="startDate"></th>
-            <th><input type="date" id="devolutionDate"></th>
-            <th><input type="number" id="computerReser" placeholder="Computer (Num)"></th>
-            <th><input type="number" id="clientReser" placeholder="Client (Num)"></th>
-            <th><input type="number" id="scoreReser" placeholder="Score (Num)"></th>
-            <th><button onclick="agregarReser()" id="btnAgregarReser">Agregar Reservacion</button></th>
-            <th><button onclick="listarReser()" id="btnListarReser">Ver Reservaciones</button></th>
-        </tr>
-    </table>
-    <table>
-        <tr>
-            <div id="listReser"></div>
-        </tr>
-    </table>
-
-    <table>
-        <tr>
-            <h1>Administradores</h1>
-        </tr>
-        <tr>
-            <th><input type="text" id="nombre" placeholder="Nombre (text)"></th>
-            <th><input type="text" id="clave" placeholder="Contraseña (text)"></th>
-            <th><button onclick="agregarAdmin()" id="btnAgregarAdmin">Agregar Administrador</button></th>
-            <th><button onclick="listarAdmin()" id="btnListarAdmin">Ver Administradores</button></th>
-        </tr>
-    </table>
-    <table>
-        <tr>
-            <div id="listAdmin"></div>
-        </tr>
-    </table>
-
+    <script type="text/javascript">
+    $.get("/user",function (data) {
+        $("#user").html(data.name);
+        $(".unauthenticated").hide()
+        $(".authenticated").show()
+    });
+    </script>
 </body>
 </html>

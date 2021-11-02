@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categoria</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    
+    <script src="js\category\listarCategory.js"></script>
+    <script src="js\category\registrarCategory.js"></script>
+    <script src="js\category\editarCategory.js"></script>
+    <script src="js\category\borrarCategory.js"></script>
+    <script src="js\category\funcionesCategory.js"></script>
+</head>
+
+<body>
+    <div>
+        <h1>Categorias</h1>
+        <!-- en el elemento identificado con el id 'mensajes' se mostraran los mensajes
+             o resultado de ejecutar la peticion
+        -->
+        <div id="mensajes"></div>
+        <br>
+        <a href="privado.html"><img src="img/back.png" alt="Regresar"></a>
+        
+        <button id="nuevoRegistro" onclick="activaNuevo();">Registrar Categoria</button>
+        
+        <div id="listado"></div>
+
+        <div id="nuevo">
+            <h3>Registrar Categoria</h3>
+            <th><input type="text" id="name" placeholder="Name (text)"></th>
+            <th><input type="text" id="description" placeholder="Description (text)"></th>
+            <button onclick="registrar()">Guardar</button>
+            <button onclick="estadoInicial()">Cancelar</button>
+        </div>
+
+        <div id="editar">
+            <h3>Editar Cateogria</h3>
+            <th><input type="number" id="idEdit" placeholder="id"></th>
+            <th><input type="text" id="nameEdit" placeholder="Name Edit (text)"></th>
+            <th><input type="text" id="descriptionEdit" placeholder="Description Edit (text)"></th>
+            <button onclick="actualizar()">Guardar</button>
+            <button onclick="estadoInicial()">Cancelar</button>
+        </div>
+        
+    </div>
+</body>
+</html>
