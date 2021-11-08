@@ -1,5 +1,23 @@
-function validaesVacio(dato){
-    return !dato.trim().length;
+function validaesVacio(dato){ //name
+    num=dato.trim().length;
+    //console.log("name",num);
+    if (num>=1 && num<=45) {
+        return false;
+    }else{
+        return true;
+    }
+    //return !dato.trim().length;
+}
+
+function validaOtro(dato){ //description
+    num=dato.trim().length;
+    //console.log("description",num);
+    if (num>=1 && num<=250) {
+        return false;
+    }else{
+        return true;
+    }
+    //return !dato.trim().length;
 }
 
 function validar(){
@@ -9,13 +27,13 @@ function validar(){
     $("#mensajes").html("");
 
     if( validaesVacio(name)) {
-        errores="name vacio<br>";
+        errores="ERROR. Name fuera de los parametros (Min 1 y Max 45)<br>";
         $("#mensajes").html(errores);
         $("#mensajes").show(500);
         $("#name").focus();
         return false;
-    }else if( validaesVacio(description)) {
-        errores="description vacio<br>";
+    }else if( validaOtro(description)) {
+        errores="ERROR. Descripcion fuera de los parametros (Min 1 y Max 250)<br>";
         $("#mensajes").html(errores);
         $("#mensajes").show(500);
         $("#description").focus();
@@ -43,13 +61,13 @@ function validar(){
         $("#idEdit").focus();
         return false;
     }else if( validaesVacio(name)) {
-        errores="name vacio<br>";
+        errores="ERROR. Name fuera de los parametros (Min 1 y Max 45)<br>";
         $("#mensajes").html(errores);
         $("#mensajes").show(500);
         $("#nameEdit").focus();
         return false;
-    }else if( validaesVacio(description)) {
-        errores="description vacio<br>";
+    }else if( validaOtro(description)) {
+        errores="ERROR. Descripcion fuera de los parametros (Min 1 y Max 250)<br>";
         $("#mensajes").html(errores);
         $("#mensajes").show(500);
         $("#descriptionEdit").focus();

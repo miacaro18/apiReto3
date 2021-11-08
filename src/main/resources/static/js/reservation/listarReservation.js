@@ -47,8 +47,8 @@ function listarRespuesta(respu) {
                   
     for (var i=0; i < respu.length; i++) {
         tabla +=`<tr>
-                    <td>${respu[i].startDate}</td> 
-                    <td>${respu[i].devolutionDate}</td> 
+                    <td>${respu[i].startDate.substr(-29,10)}</td> 
+                    <td>${respu[i].devolutionDate.substr(-29,10)}</td> 
                     <td>${respu[i].computer.name}</td> 
                     <td>${respu[i].client.idClient}</td>
                     <td>${respu[i].client.name}</td>

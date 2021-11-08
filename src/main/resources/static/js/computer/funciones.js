@@ -1,4 +1,36 @@
-function validaesVacio(dato){
+function validaesName(dato){//name && brand
+    num=dato.trim().length;
+    //console.log("name || brand= ",num);
+    if (num>=1 && num<=45) {
+        return false;
+    }else{
+        return true;
+    }
+    //return !dato.trim().length;
+}
+
+function validaYear(dato){ //year
+    //console.log("Year= ",dato);
+    if (dato>=2000 && dato<=2021) {
+        return false;
+    }else{
+        return true;
+    }
+    //return !dato.trim().length;
+}
+
+function validarOtro(dato){ //description
+    num=dato.trim().length;
+    //console.log("description= ",num);
+    if (num>=1 && num<=250) {
+        return false;
+    }else{
+        return true;
+    }
+    //return !dato.trim().length;
+}
+
+function validaesVacio(dato){//category
     return !dato.trim().length;
 }
 
@@ -11,26 +43,26 @@ function validar(){
     let errores="";
     $("#mensajes").html("");
 
-    if( validaesVacio(name)) {
-        errores="name vacio<br>";
+    if( validaesName(name)) {
+        errores="ERROR. Name fuera de los parametros (Min 1 y Max 45)<br>";
         $("#mensajes").html(errores);
         $("#mensajes").show(500);
         $("#name").focus();
         return false;
-    }else if( validaesVacio(brand)) {
-        errores="brand vacio<br>";
+    }else if( validaesName(brand)) {
+        errores="ERROR. Brand fuera de los parametros (Min 1 y Max 45)<br>";
         $("#mensajes").html(errores);
         $("#mensajes").show(500);
         $("#brand").focus();
         return false;
-    }else if( validaesVacio(year)) {  
-        errores="year vacio<br>";
+    }else if( validaYear(year)) {  
+        errores="ERROR. Year debe estar entre 2000 y 2021<br>";
         $("#mensajes").html(errores);
         $("#mensajes").show(500);
         $("#year").focus();
         return false;
-    }else if( validaesVacio(description)) {  
-        errores="description vacio<br>";
+    }else if( validarOtro(description)) {  
+        errores="ERROR. Description fuera de los parametros (Min 1 y Max 250)<br>";
         $("#mensajes").html(errores);
         $("#mensajes").show(500);
         $("#description").focus();
@@ -66,26 +98,26 @@ function validar(){
         $("#mensajes").show(500);
         $("#idEdit").focus();
         return false;
-    }else if( validaesVacio(name)) {
-        errores="Name vacio<br>";
+    }else if( validaesName(name)) {
+        errores="ERROR. Name fuera de los parametros (Min 1 y Max 45)<br>";
         $("#mensajes").html(errores);
         $("#mensajes").show(500);
         $("#nameEdit").focus();
         return false;
-    }else if( validaesVacio(brand)) {
-        errores="Brand vacio<br>";
+    }else if( validaesName(brand)) {
+        errores="ERROR. Brand fuera de los parametros (Min 1 y Max 45)<br>";
         $("#mensajes").html(errores);
         $("#mensajes").show(500);
         $("#brandEdit").focus();
         return false;
-    }else if( validaesVacio(year)) {  
-        errores="Year vacio<br>";
+    }else if( validaYear(year)) {  
+        errores="ERROR. Year debe estar entre 2000 y 2021<br>";
         $("#mensajes").html(errores);
         $("#mensajes").show(500);
         $("#yearEdit").focus();
         return false;
-    }else if( validaesVacio(description)) {  
-        errores="Description vacio<br>";
+    }else if( validarOtro(description)) {  
+        errores="ERROR. Description fuera de los parametros (Min 1 y Max 250)<br>";
         $("#mensajes").html(errores);
         $("#mensajes").show(500);
         $("#descriptionEdit").focus();

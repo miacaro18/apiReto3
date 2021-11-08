@@ -36,8 +36,10 @@ function editarRegistro(numId) {
 
 function editarRespuesta(respu) {
     $("#idEdit").val(respu.idReservation);
-    $("#startDateEdit").val(respu.startDate),
-    $("#devolutionDateEdit").val(respu.devolutionDate),
+    $("#startDateEdit").val(String(respu.startDate).substr(-29,10)),
+    //console.log("startDate",String(respu.startDate).substr(-29,10));
+    $("#devolutionDateEdit").val(String(respu.devolutionDate).substr(-29,10)),
+    //console.log("devolutionDate",String(respu.devolutionDate).substr(-29,10));
     $("#computerEdit").val(respu.computer.id);
     $("#clientEdit").val(respu.client.idClient);
     $("#scoreEdit").val(respu.score.id);

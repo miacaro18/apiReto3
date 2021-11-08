@@ -1,5 +1,28 @@
-function validaesVacio(dato){
+function validaesVacio(dato){//idEdit
     return !dato.trim().length;
+}
+
+function validarDev(startDate,devolutionDate){ //devolutionDate
+    const hoy = String(new Date().toISOString()).substr(-29,10);
+    //String(new Date().toISOString()).substr(-29,10)
+    console.log("hoy= ", hoy);
+    console.log("startDate= ",startDate, "devolutionDate= ",devolutionDate);
+    if (devolutionDate >= startDate){
+        return false;
+    }else{
+        return true;
+    }
+    //return !dato.trim().length;
+}
+
+function validarStatus(dato){ //Status
+    //console.log("status= ",dato);
+    if (dato=="completed" || dato=="cancelled"){
+        return false;
+    }else{
+        return true;
+    }
+    //return !dato.trim().length;
 }
 
 function validar(){
@@ -18,8 +41,8 @@ function validar(){
         $("#mensajes").show(500);
         $("#startDate").focus();
         return false;
-    }else if( validaesVacio(devolutionDate)) {
-        errores="Devolution Date vacio<br>";
+    }else if( validarDev(startDate,devolutionDate)) {
+        errores="Devolution Date debe ser igual o mayor a Start Date o esta vacio<br>";
         $("#mensajes").html(errores);
         $("#mensajes").show(500);
         $("#devolutionDate").focus();
@@ -42,8 +65,8 @@ function validar(){
         $("#mensajes").show(500);
         $("#score").focus();
         return false;
-    }else if( validaesVacio(status)) {
-        errores="Status vacio<br>";
+    }else if( validarStatus(status)) {
+        errores="ERROR. Status debe ser 'completed' o 'cancelled'<br>";
         $("#mensajes").html(errores);
         $("#mensajes").show(500);
         $("#status").focus();
@@ -75,13 +98,13 @@ function validarEditar(){
         $("#idReservationEdit").focus();
         return false;
     }else if( validaesVacio(startDate)) {
-        errores="Start Date vacio<br>";
+        errores="Start Date esta vacio<br>";
         $("#mensajes").html(errores);
         $("#mensajes").show(500);
         $("#startDateEdit").focus();
         return false;
-    }else if( validaesVacio(devolutionDate)) {
-        errores="Devolution Date vacio<br>";
+    }else if( validarDev(startDate,devolutionDate)) {
+        errores="Devolution Date debe ser igual o mayor a Start Date o esta vacio<br>";
         $("#mensajes").html(errores);
         $("#mensajes").show(500);
         $("#devolutionDateEdit").focus();
@@ -104,8 +127,8 @@ function validarEditar(){
         $("#mensajes").show(500);
         $("#scoreEdit").focus();
         return false;
-    }else if( validaesVacio(status)) {
-        errores="Status vacio<br>";
+    }else if( validarStatus(status)) {
+        errores="ERROR. Status debe ser 'completed' o 'cancelled'<br>";
         $("#mensajes").html(errores);
         $("#mensajes").show(500);
         $("#statusEdit").focus();

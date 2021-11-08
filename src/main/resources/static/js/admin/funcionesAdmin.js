@@ -1,5 +1,23 @@
-function validaesVacio(dato){
-    return !dato.trim().length;
+function validaesVacio(dato){ //name
+    num=dato.trim().length;
+    //console.log("name",num);
+    if (num>=1 && num<=250) {
+        return false;
+    }else{
+        return true;
+    }
+    //return !dato.trim().length;
+}
+
+function validaOtro(dato){ //password && email
+    num=dato.trim().length;
+    //console.log("password || email",num);
+    if (num>=1 && num<=45) {
+        return false;
+    }else{
+        return true;
+    }
+    //return !dato.trim().length;
 }
 
 function validar(){
@@ -10,19 +28,19 @@ function validar(){
     $("#mensajes").html("");
 
     if( validaesVacio(name)) {
-        errores="Name vacio<br>";
+        errores="ERROR. Name fuera de los parametros (Min 1 y Max 250 caracteres)";
         $("#mensajes").html(errores);
         $("#mensajes").show(500);
         $("#name").focus();
         return false;
-    }else if( validaesVacio(password)) {
-        errores="Contraseña vacio<br>";
+    }else if( validaOtro(password)) {
+        errores="ERROR. Contraseña fuera de los parametros (Min 1 y Max 45 caracteres)";
         $("#mensajes").html(errores);
         $("#mensajes").show(500);
         $("#password").focus();
         return false;
-    }else if( validaesVacio(email)) {
-        errores="Email vacio<br>";
+    }else if( validaOtro(email)) {
+        errores="ERROR. Email fuera de los parametros (Min 1 y Max 45 caracteres)";
         $("#mensajes").html(errores);
         $("#mensajes").show(500);
         $("#email").focus();
@@ -51,19 +69,19 @@ function validarEditar(){
         $("#idEdit").focus();
         return false;
     }else if( validaesVacio(name)) {
-        errores="Name vacio<br>";
+        errores="ERROR. Name fuera de los parametros (Min 1 y Max 250 caracteres)";
         $("#mensajes").html(errores);
         $("#mensajes").show(500);
         $("#nameEdit").focus();
         return false;
-    }else if( validaesVacio(password)) {
-        errores="Contraseña vacio<br>";
+    }else if( validaOtro(password)) {
+        errores="ERROR. Contraseña fuera de los parametros (Min 1 y Max 45 caracteres)";
         $("#mensajes").html(errores);
         $("#mensajes").show(500);
         $("#passwordEdit").focus();
         return false;
-    }else if( validaesVacio(email)) {
-        errores="Email vacio<br>";
+    }else if( validaOtro(email)) {
+        errores="ERROR. Email fuera de los parametros (Min 1 y Max 45 caracteres)";
         $("#mensajes").html(errores);
         $("#mensajes").show(500);
         $("#emailEdit").focus();

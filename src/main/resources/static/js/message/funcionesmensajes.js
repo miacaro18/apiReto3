@@ -1,5 +1,16 @@
-function validaesVacio(dato){
+function validaesVacio(dato){ 
     return !dato.trim().length;
+}
+
+function validarMessa(dato){ //messageText
+    num=dato.trim().length;
+    //console.log("messageText= ",num);
+    if (num>=1 && num<=250) {
+        return false;
+    }else{
+        return true;
+    }
+    //return !dato.trim().length;
 }
 
 function validar(){
@@ -9,8 +20,8 @@ function validar(){
     let errores="";
     $("#mensajes").html("");
 
-    if( validaesVacio(messageText)) {
-        errores="Message Text vacio<br>";
+    if( validarMessa(messageText)) {
+        errores="ERROR. Message fuera de los parametros (Min 1 y Max 250)<br>";
         $("#mensajes").html(errores);
         $("#mensajes").show(500);
         $("#messageText").focus();
@@ -50,8 +61,8 @@ function validarEditar(){
         $("#mensajes").show(500);
         $("#idEdit").focus();
         return false;
-    }else if( validaesVacio(messageText)) {
-        errores="Message Text vacio<br>";
+    }else if( validarMessa(messageText)) {
+        errores="ERROR. Message fuera de los parametros (Min 1 y Max 250)<br>";
         $("#mensajes").html(errores);
         $("#mensajes").show(500);
         $("#messageTextEdit").focus();

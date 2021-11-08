@@ -32,7 +32,7 @@ public class Client implements Serializable{
 
     //Realizamos la relacion (uno a muchos) con reservation
     @OneToMany(cascade = {CascadeType.PERSIST},mappedBy = "client")
-    @JsonIgnoreProperties({"client","reservations","messages","computer"})
+    @JsonIgnoreProperties({"client","reservations","messages"})//,"computer"
     private List<Reservation> reservations;
 
     public Integer getIdClient() {

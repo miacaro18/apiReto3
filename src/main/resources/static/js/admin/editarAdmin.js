@@ -77,7 +77,7 @@ function actualizar() {
 
 function activaEditar() {
     $("#idEdit").hide();
-    $("#editar").show(500);
+    $("#editar").show(1000);
     $("#idEdit").focus();
     $("#nuevo").hide();
     $("#nuevoRegistro").hide(500)

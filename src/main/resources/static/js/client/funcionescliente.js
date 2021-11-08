@@ -1,5 +1,33 @@
-function validaesVacio(dato){
-    return !dato.trim().length;
+function validaesVacio(dato){ //name
+    num=dato.trim().length;
+    //console.log("name",num);
+    if (num>=1 && num<=250) {
+        return false;
+    }else{
+        return true;
+    }
+    //return !dato.trim().length;
+}
+
+function validarOtro(dato){ //password && email
+    num=dato.trim().length;
+    //console.log("password || email",num);
+    if (num>=1 && num<=45) {
+        return false;
+    }else{
+        return true;
+    }
+    //return !dato.trim().length;
+}
+
+function validarAge(dato){ //age
+    //console.log("Age",dato);
+    if (dato>=18 && dato<=120) {
+        return false;
+    }else{
+        return true;
+    }
+    //return !dato.trim().length;
 }
 
 function validar(){
@@ -13,25 +41,25 @@ function validar(){
 
     //valida que los campos no sean vacios
     if( validaesVacio(name)) {
-        errores="name vacio<br>";
+        errores="ERROR. Name fuera de los parametros (Min 1 y Max 250)<br>";
         $("#mensajes").html(errores);
         $("#mensajes").show(500);
         $("#name").focus();
         return false;
-    }else if( validaesVacio(password)) {
-        errores="Contraseña vacio<br>";
+    }else if( validarOtro(password)) {
+        errores="ERROR. Contraseña fuera de los parametros (Min 1 y Max 45)<br>";
         $("#mensajes").html(errores);
         $("#mensajes").show(500);
         $("#password").focus();
         return false;
-    }else if( validaesVacio(email)) {
-        errores="email vacio<br>";
+    }else if( validarOtro(email)) {
+        errores="ERROR. Email fuera de los parametros (Min 1 y Max 45)<br>";
         $("#mensajes").html(errores);
         $("#mensajes").show(500);
         $("#email").focus();
         return false;
-    }else if( validaesVacio(age)) {  
-        errores="age vacio<br>";
+    }else if( validarAge(age)) {  
+        errores="ERROR. Age fuera de los parametros (Min 18 y Max 120 Años)<br>";
         $("#mensajes").html(errores);
         $("#mensajes").show(500);
         $("#age").focus();
@@ -61,25 +89,25 @@ function validarEditar(){
         $("#idEdit").focus();
         return false;
     }else if( validaesVacio(name)) {
-        errores="name vacio<br>";
+        errores="ERROR. Name fuera de los parametros (Min 1 y Max 250)<br>";
         $("#mensajes").html(errores);
         $("#mensajes").show(500);
         $("#nameEdit").focus();
         return false;
-    }else if( validaesVacio(password)) {
-        errores="Contraseña vacio<br>";
+    }else if( validarOtro(password)) {
+        errores="ERROR. Contraseña fuera de los parametros (Min 1 y Max 45)<br>";
         $("#mensajes").html(errores);
         $("#mensajes").show(500);
         $("#passwordEdit").focus();
         return false;
-    }else if( validaesVacio(email)) {
-        errores="email vacio<br>";
+    }else if( validarOtro(email)) {
+        errores="ERROR. Email fuera de los parametros (Min 1 y Max 45)<br>";
         $("#mensajes").html(errores);
         $("#mensajes").show(500);
         $("#emailEdit").focus();
         return false;
-    }else if( validaesVacio(age)) {  
-        errores="age vacio<br>";
+    }else if( validarAge(age)) {  
+        errores="ERROR. Age fuera de los parametros (Min 18 y Max 120 Años)<br>";
         $("#mensajes").html(errores);
         $("#mensajes").show(500);
         $("#ageEdit").focus();
